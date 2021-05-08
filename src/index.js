@@ -4,9 +4,29 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import { store, persistor } from "./stateManagement/store";
+import { PersistGate } from "redux-persist/integration/react";
+
+import { Provider } from 'react-redux';
+import { QueryClient, QueryClientProvider } from 'react-query';
+
+
+const queryClient = new QueryClient()
+
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+
+        <QueryClientProvider client={queryClient}>
+          <App />
+        </QueryClientProvider>
+
+      </PersistGate>
+    </Provider>
+
   </React.StrictMode>,
   document.getElementById('root')
 );
