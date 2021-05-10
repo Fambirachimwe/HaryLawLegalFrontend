@@ -17,4 +17,4 @@ export const FormFields = {
     password: "password"
 }
 
-export const PRODUCTION_URL = "https://harrylawlegal.herokuapp.com/";
+export const PRODUCTION_URL = "https://harrylawlegal.herokuapp.com";
