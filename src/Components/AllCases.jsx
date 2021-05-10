@@ -9,10 +9,6 @@ import { connect } from 'react-redux';
 const AllCases = ({setCases}) => {
 
    
-    // const config = {
-    //     headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
-    // };
-
     
     const { isLoading, isError, data, error } = useQuery('cases', fetchCases);
 
@@ -54,7 +50,11 @@ const AllCases = ({setCases}) => {
                             <table className="table dashboard-table">
                                 {/*  insert the Case table here  */}
 
-                                <Table data={data} />
+                                <>
+                                    <Table data={data} />
+                                </>
+                                    
+                                
 
                             </table>
                         </div>

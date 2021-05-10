@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import { Button, Fab, TextField } from '@material-ui/core';
 import AddIcon from '@material-ui/icons/Add';
-import axios from 'axios';
+// import axios from 'axios';
 import {addSchedule} from "../api/api";
 
 
@@ -61,6 +61,7 @@ export default function SimpleModal() {
     const handleSubmit = () => {
    
         addSchedule(date, title, location);
+        // console.log(date, title, location)
     }
 
     const body = (
@@ -85,14 +86,14 @@ export default function SimpleModal() {
              
                 <br></br>
                 <br></br>
-                <TextField id="outlined-basic" onChange={(e) => setTitle(e.target.value)} label="Title" variant="outlined" />
+                <TextField id="outlined-basic" value={title} onChange={(e) => setTitle(e.target.value)} label="Title" variant="outlined" />
                 <br></br>
                 <br></br>
-                <TextField id="outlined-basic" label="Location" onChange={(e) =>setLocation(e.target.value)} variant="outlined" />
+                <TextField id="outlined-basic" label="Location" value={location} onChange={(e) =>setLocation(e.target.value)} variant="outlined" />
                 <br></br>
                 <br></br>
 
-                <Button onClick={handleSubmit}>Save</Button>
+                <Button onClick={() => handleSubmit()}>Save</Button>
                 
             </form>
 

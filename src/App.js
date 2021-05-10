@@ -1,10 +1,9 @@
 import './App.css';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
 import Login from './Components/Login';
 import Register from './Components/Register';
 import MainApp from './Components/MainApp';
-
-// import {getToken} from './util/util';
+import { connect } from 'react-redux';
 
 
 function App() {
@@ -24,9 +23,10 @@ function App() {
         </Route>
 
         <Route  path={'/'}>
+          {
+            localStorage.getItem("token") ? (<MainApp />) : (<Redirect to="/login" />)
+          }
 
-          
-          <MainApp />
         </Route>
 
         </Switch>
@@ -41,4 +41,10 @@ function App() {
 }
 
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    ...state
+  }
+}
+
+export default connect(mapStateToProps)(App);

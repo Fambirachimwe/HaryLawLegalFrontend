@@ -26,7 +26,9 @@ const Table = ({ data, history }) => {
                     </thead>
                     <tbody>
                         {
-                            data.map(_data => (
+                           
+                            data ? (
+                                data.map(_data => (
                                
 
                                     <tr key={_data.id} onClick={() => history.push(`cases/${_data.id}`)}>                                        
@@ -34,11 +36,13 @@ const Table = ({ data, history }) => {
                                         <td>{_data.title}</td>
                                         <td>
                                         <Chip label={_data.status} color={_data.status === "new" ? "primary": "seconday"} />
-                                            {/* {_data.status} */}
+                                            
                                         </td>
                                         
                                     </tr>              
                             ))
+                            ): (null)
+                            
                         }         
                     </tbody>
                 </table>

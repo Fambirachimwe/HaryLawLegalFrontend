@@ -37,7 +37,7 @@ const Header = ({ user }) => {
                                     <span class="user-name">{user ? user.user.username : ""}</span>
                                 </span>
                             </button>
-                            <div class="mdc-menu mdc-menu-surface" tabindex="-1">
+                            <div class="mdc-menu mdc-menu-surface" tabIndex="-1">
                                 <ul class="mdc-list" role="menu" aria-hidden="true" aria-orientation="vertical">
                                     <li class="mdc-list-item" role="menuitem">
                                         <div class="item-thumbnail item-thumbnail-icon-only">

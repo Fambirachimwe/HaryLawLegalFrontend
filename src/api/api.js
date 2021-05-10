@@ -11,8 +11,8 @@ export const fetchCases = async () => {
 }
 
 
-export const addSchedule = async ({date, title, location}) => {
-    axios.post("http://localhost:1337/schedules",{date, title, location}, config).then(data => {
+export const addSchedule = (date, title, Location) => {
+    axios.post("http://localhost:1337/schedules",{date, title, Location}, config).then(data => {
         console.log(data)
     }).catch(err => {
         console.log(err)

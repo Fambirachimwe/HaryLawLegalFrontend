@@ -26,14 +26,16 @@ const Login = ({isAuth, setUser}) => {
         axios.post('http://localhost:1337/auth/local', {
             identifier: email,
             password: password
-        }).catch(err =>{
-            console.log(err)
         }).then(user => {
             // store the tocken in localStorage
             localStorage.setItem("token", user.data.jwt);
             isAuth(); // dispatching to redux state
             setUser(user.data)
             
+        }).catch(err =>{
+            // console.log(err)
+            alert(err)
+            alert("Email or password incorrect")
         }).then( () => {
             history.push("/")  
         })
