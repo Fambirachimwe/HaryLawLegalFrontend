@@ -16,3 +16,5 @@ export const FormFields = {
     email: "email",
     password: "password"
 }
+
+export const PRODUCTION_URL = "https://harrylawlegal.herokuapp.com/";

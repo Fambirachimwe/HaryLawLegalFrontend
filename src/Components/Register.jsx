@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FormFields } from '../util/util';
+import { FormFields, PRODUCTION_URL } from '../util/util';
 import axios from 'axios';
 import {Link ,useHistory} from 'react-router-dom';
 
@@ -42,7 +42,7 @@ const Register = () => {
 
     const handleSubmit = () => {
 
-        axios.post("http://localhost:1337/auth/local/register", {
+        axios.post(`${PRODUCTION_URL}/auth/local/register`, {
             username,
             surname,
             password,
