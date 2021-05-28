@@ -34,7 +34,7 @@ const CaseDetail = () => {
                     <button className="mdc-button mdc-button--raised mdc-ripple-upgraded" style={{"float": "right","--mdc-ripple-fg-size":"58px", "--mdc-ripple-fg-scale":"1.97272", "--mdc-ripple-fg-translate-start":"41px, -1px", "--mdc-ripple-fg-translate-end":"20.0078px, -11px"}}>
                         Upload Document
                     </button>
-                        {data.documents.length > 0 ? (
+                        {data.documents  ? (
                             <table className="table dashboard-table">
                                 <thead>
                                     <tr>

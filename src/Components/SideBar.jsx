@@ -94,6 +94,7 @@ const SideBar = ({ user }) => {
                     <span className="divider"></span>
                     <Link to="#" onClick={() => {
                         localStorage.removeItem("token");
+                        localStorage.removeItem("persist:root");
                         // localStorage.removeItem("persist:root");
                         history.push("/login")
                     }}>Logout</Link>

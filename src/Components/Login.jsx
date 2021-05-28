@@ -3,7 +3,7 @@ import { Link, useHistory } from 'react-router-dom';
 import axios from 'axios';
 import { connect } from 'react-redux';
 
-import { PRODUCTION_URL } from '../util/util'
+import { PRODUCTION_URL, DEVELOPMENT_URL } from '../util/util'
 
 
 
@@ -25,7 +25,7 @@ const Login = ({isAuth, setUser}) => {
         // console.log(`Identifier: ${email} Password: ${password}`);
         
 
-        axios.post(`${PRODUCTION_URL}/auth/local`, {
+        axios.post(`${DEVELOPMENT_URL}/auth/local`, {
             identifier: email,
             password: password
         }).then(user => {

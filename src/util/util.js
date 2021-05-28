@@ -18,3 +18,5 @@ export const FormFields = {
 }
 
 export const PRODUCTION_URL = "https://harrylawlegal.herokuapp.com";
+
+export const DEVELOPMENT_URL = "http://localhost:1337"
